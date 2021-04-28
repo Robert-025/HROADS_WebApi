@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using senai_hroads_webApiDBFirst.Repositories;

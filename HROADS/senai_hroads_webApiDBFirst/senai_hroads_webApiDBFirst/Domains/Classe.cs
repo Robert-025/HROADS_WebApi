@@ -13,7 +13,7 @@ namespace senai_hroads_webApiDBFirst.Domains
         }
 
         public int IdClasse { get; set; }
-        public string NomeClasse { get; set; }
+        public string Nome { get; set; }
 
         public virtual ICollection<Personagem> Personagems { get; set; }
     }
