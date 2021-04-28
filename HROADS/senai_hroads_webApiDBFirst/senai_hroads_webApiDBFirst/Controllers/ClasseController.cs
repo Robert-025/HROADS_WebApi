@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using senai_hroads_webApiDBFirst.Repositories;
@@ -63,6 +64,47 @@ namespace senai_hroads_webApiDBFirst.Controllers
 
             // Retorna um status code
             return StatusCode(201);
+        }
+
+
+        /// <summary>
+        /// Atualiza uma classe existente
+        /// </summary>
+        /// <param name="id">Id do estudio que será atualizado</param>
+        /// <param name="classeAtualizada">Objeto classeAtualizada com as novas informações </param>
+        /// <returns>retorna um status code</returns>
+        [HttpPut("{id}")]
+
+        public IActionResult Put(int id, Classe classeAtualizada)
+        {
+            //faz a chamada para o método 
+            _classeRepository.Atualizar(id, classeAtualizada);
+            //retorna o status code
+            return StatusCode(204);
+        }
+
+        /// <summary>
+        /// Deleta uma classe existente
+        /// </summary>
+        /// <param name="id">ID da classe que será deletada</param>
+        /// <returns>Status code </returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            //Faz a chamada para um método 
+            _classeRepository.Deletar(id);
+            //Retorna um Status code
+            return StatusCode(204);
+        }
+
+        /// <summary>
+        /// Lista todas as classes com seus respectivos Personagens
+        /// </summary>
+        /// <returns>Uma lista de Classes com os Personagens e um status code 200 - OK</returns>
+        [HttpGet("Personagems")]
+        public IActionResult GetPersonagems()
+        {
+            return Ok(_classeRepository.ListarPersonagems());
         }
     }
 }

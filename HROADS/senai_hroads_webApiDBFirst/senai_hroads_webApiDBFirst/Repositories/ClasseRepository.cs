@@ -1,4 +1,5 @@
-﻿using senai_hroads_webApiDBFirst.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using senai_hroads_webApiDBFirst.Contexts;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using System;
@@ -27,6 +28,11 @@ namespace senai_hroads_webApiDBFirst.Repositories
             {
                 classeBuscado.Nome = classeAtualizada.Nome;
             }
+
+            //atualiza a classe buscada
+            ctx.Classes.Update(classeBuscado);
+            // Salva as informações para serem gravadas no banco de dados
+            ctx.SaveChanges();
         }
 
         /// <summary>
@@ -59,7 +65,13 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <param name="id">Id da classe que será deletada</param>
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            //Busca a classe 
+            Classe classeBuscada = ctx.Classes.Find(id);
+
+            //Remove a classe buscada
+            ctx.Classes.Remove(classeBuscada);
+            // Salva as alterações
+            ctx.SaveChanges();
         }
 
         /// <summary>
@@ -72,13 +84,11 @@ namespace senai_hroads_webApiDBFirst.Repositories
             return ctx.Classes.ToList();
         }
 
-        /// <summary>
-        /// Lista os jogos pela sua classe
-        /// </summary>
-        /// <returns>Uma lista de classe</returns>
-        public List<Classe> ListarJogos()
+
+        public List<Classe> ListarPersonagems()
         {
-            throw new NotImplementedException();
+            //Retorna uma lista de classes com seus personagens
+            return ctx.Classes.Include(e => e.Personagems).ToList();
         }
     }
 }
