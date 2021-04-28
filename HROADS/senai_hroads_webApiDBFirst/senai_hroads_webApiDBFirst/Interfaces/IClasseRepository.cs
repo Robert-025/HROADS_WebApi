@@ -21,7 +21,7 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// Lista os jogos pela sua classe
         /// </summary>
         /// <returns>Uma lista de classe</returns>
-        List<Classe> ListarJogos();
+        List<Classe> ListarPersonagems();
 
         /// <summary>
         /// Busca uma classe pelo seu id

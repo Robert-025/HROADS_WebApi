@@ -1,1 +1,1 @@
-testeRegis
+testeRegis: API feita até 2:01:44 

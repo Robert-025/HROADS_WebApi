@@ -86,5 +86,29 @@ namespace senai_hroads_webApiDBFirst.Controllers
             //retorna o status code
             return StatusCode(204);
         }
+
+        /// <summary>
+        /// Deleta uma classe existente
+        /// </summary>
+        /// <param name="id">ID da classe que será deletada</param>
+        /// <returns>Status code </returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            //Faz a chamada para um método 
+            _classeRepository.Deletar(id);
+            //Retorna um Status code
+            return StatusCode(204);
+        }
+
+        /// <summary>
+        /// Lista todas as classes com seus respectivos Personagens
+        /// </summary>
+        /// <returns>Uma lista de Classes com os Personagens e um status code 200 - OK</returns>
+        [HttpGet("Personagems")]
+        public IActionResult GetPersonagems()
+        {
+            return Ok(_classeRepository.ListarPersonagems());
+        }
     }
 }
