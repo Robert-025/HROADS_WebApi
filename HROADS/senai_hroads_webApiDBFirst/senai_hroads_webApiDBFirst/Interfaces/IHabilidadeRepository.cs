@@ -1,4 +1,5 @@
-﻿using System;
+﻿using senai_hroads_webApiDBFirst.Domains;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace senai_hroads_webApiDBFirst.Interfaces
             /// </summary>
             /// <param name="id">Id habilidade que será buscada</param>
             /// <returns>A Habilidade buscada</returns>
-            Classe BuscarPorId(int id);
+            Habilidade BuscarPorId(int id);
 
             /// <summary>
             /// Deletar uma Habilidade existente
@@ -46,4 +47,5 @@ namespace senai_hroads_webApiDBFirst.Interfaces
             /// <param name="HabilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
             void Atualizar(int id, Habilidade HabilidadeAtualizada);
         }
+    }
 }
