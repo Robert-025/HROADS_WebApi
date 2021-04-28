@@ -23,13 +23,15 @@ namespace senai_hroads_webApiDBFirst.Contexts
         public virtual DbSet<HabilidadeClasse> HabilidadeClasses { get; set; }
         public virtual DbSet<Personagem> Personagems { get; set; }
         public virtual DbSet<TipoHabilidade> TipoHabilidades { get; set; }
+        public virtual DbSet<TiposUsuario> TiposUsuarios { get; set; }
+        public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-CRR2THJ; initial catalog=SENAI_HROADS_TARDE; user Id=sa; pwd=@nota1000;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=ROBERT-025; Initial Catalog=SENAI_HROADS_TARDE; user Id=sa; pwd=senai@132;");
             }
         }
 
@@ -46,7 +48,7 @@ namespace senai_hroads_webApiDBFirst.Contexts
 
                 entity.Property(e => e.IdClasse).HasColumnName("idClasse");
 
-                entity.Property(e => e.NomeClasse)
+                entity.Property(e => e.Nome)
                     .IsRequired()
                     .HasMaxLength(100)
                     .IsUnicode(false);
@@ -134,6 +136,47 @@ namespace senai_hroads_webApiDBFirst.Contexts
                     .IsRequired()
                     .HasMaxLength(100)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<TiposUsuario>(entity =>
+            {
+                entity.HasKey(e => e.IdTipoUsuario)
+                    .HasName("PK__TiposUsu__03006BFF908656EF");
+
+                entity.Property(e => e.IdTipoUsuario).HasColumnName("idTipoUsuario");
+
+                entity.Property(e => e.Descricao)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Usuario>(entity =>
+            {
+                entity.HasKey(e => e.IdUsuarios)
+                    .HasName("PK__Usuarios__3940559A4DB1D5F7");
+
+                entity.HasIndex(e => e.Email, "UQ__Usuarios__A9D10534CB01106C")
+                    .IsUnique();
+
+                entity.Property(e => e.IdUsuarios).HasColumnName("idUsuarios");
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.IdTiposUsuarios).HasColumnName("idTiposUsuarios");
+
+                entity.Property(e => e.Senha)
+                    .IsRequired()
+                    .HasMaxLength(250)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.IdTiposUsuariosNavigation)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.IdTiposUsuarios)
+                    .HasConstraintName("FK__Usuarios__idTipo__70DDC3D8");
             });
 
             OnModelCreatingPartial(modelBuilder);
