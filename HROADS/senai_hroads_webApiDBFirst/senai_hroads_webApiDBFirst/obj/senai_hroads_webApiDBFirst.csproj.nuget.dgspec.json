@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\10\\Documents\\Curso\\SENAI_2S\\2021-1S-2D\\sprint_2_backend\\exercicios\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {}
+    "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {}
   },
   "projects": {
-    "C:\\Users\\10\\Documents\\Curso\\SENAI_2S\\2021-1S-2D\\sprint_2_backend\\exercicios\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {
+    "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\10\\Documents\\Curso\\SENAI_2S\\2021-1S-2D\\sprint_2_backend\\exercicios\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
         "projectName": "senai_hroads_webApiDBFirst",
-        "projectPath": "C:\\Users\\10\\Documents\\Curso\\SENAI_2S\\2021-1S-2D\\sprint_2_backend\\exercicios\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
-        "packagesPath": "C:\\Users\\10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\10\\Documents\\Curso\\SENAI_2S\\2021-1S-2D\\sprint_2_backend\\exercicios\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\obj\\",
+        "projectPath": "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
+        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
