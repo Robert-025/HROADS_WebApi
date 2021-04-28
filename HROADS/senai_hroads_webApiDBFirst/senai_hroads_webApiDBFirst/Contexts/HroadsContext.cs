@@ -29,7 +29,7 @@ namespace senai_hroads_webApiDBFirst.Contexts
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=ROBERT-025; initial catalog=SENAI_HROADS_TARDE; user Id=sa; pwd=senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-CRR2THJ; initial catalog=SENAI_HROADS_TARDE; user Id=sa; pwd=@nota1000;");
             }
         }
 
@@ -46,7 +46,7 @@ namespace senai_hroads_webApiDBFirst.Contexts
 
                 entity.Property(e => e.IdClasse).HasColumnName("idClasse");
 
-                entity.Property(e => e.Nome)
+                entity.Property(e => e.NomeClasse)
                     .IsRequired()
                     .HasMaxLength(100)
                     .IsUnicode(false);

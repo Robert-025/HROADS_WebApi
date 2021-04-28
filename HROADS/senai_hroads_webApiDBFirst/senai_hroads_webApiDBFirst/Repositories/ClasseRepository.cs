@@ -24,10 +24,17 @@ namespace senai_hroads_webApiDBFirst.Repositories
         {
             Classe classeBuscado = ctx.Classes.Find(id);
 
+            //Verifica se o nome da classe foi informada
             if(classeAtualizada.NomeClasse != null)
             {
+                //Atribui os novos valores aos campos existentes
                 classeBuscado.NomeClasse = classeAtualizada.NomeClasse;
             }
+
+            //atualiza a classe buscada
+            ctx.Classes.Update(classeBuscado);
+            // Salva as informações para serem gravadas no banco de dados
+            ctx.SaveChanges();
         }
 
         /// <summary>

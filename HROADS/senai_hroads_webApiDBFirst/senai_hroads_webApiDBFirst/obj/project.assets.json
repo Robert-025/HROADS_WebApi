@@ -7358,19 +7358,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dell\\.nuget\\packages\\": {}
+    "C:\\Users\\Luana e Regis\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
+      "projectUniqueName": "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\HROADS\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
       "projectName": "senai_hroads_webApiDBFirst",
-      "projectPath": "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
-      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dell\\Desktop\\ROADS-10\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\obj\\",
+      "projectPath": "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\HROADS\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
+      "packagesPath": "C:\\Users\\Luana e Regis\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\HROADS\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Luana e Regis\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

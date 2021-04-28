@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using senai_hroads_webApiDBFirst.Repositories;
 using System;
@@ -67,6 +68,23 @@ namespace senai_hroads_webApiDBFirst.Controllers
 
             // Retorna um status code
             return StatusCode(201);
+        }
+
+
+        /// <summary>
+        /// Atualiza uma classe existente
+        /// </summary>
+        /// <param name="id">Id do estudio que será atualizado</param>
+        /// <param name="classeAtualizada">Objeto classeAtualizada com as novas informações </param>
+        /// <returns>retorna um status code</returns>
+        [HttpPut("{id}")]
+
+        public IActionResult Put(int id, Classe classeAtualizada)
+        {
+            //faz a chamada para o método 
+            _classeRepository.Atualizar(id, classeAtualizada);
+            //retorna o status code
+            return StatusCode(204);
         }
     }
 }
