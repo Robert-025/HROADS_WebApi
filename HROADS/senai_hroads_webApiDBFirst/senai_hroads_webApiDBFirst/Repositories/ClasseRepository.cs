@@ -4,7 +4,6 @@ using senai_hroads_webApiDBFirst.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai_hroads_webApiDBFirst.Repositories
 {
@@ -24,9 +23,9 @@ namespace senai_hroads_webApiDBFirst.Repositories
         {
             Classe classeBuscado = ctx.Classes.Find(id);
 
-            if(classeAtualizada.NomeClasse != null)
+            if(classeAtualizada.Nome != null)
             {
-                classeBuscado.NomeClasse = classeAtualizada.NomeClasse;
+                classeBuscado.Nome = classeAtualizada.Nome;
             }
         }
 
@@ -57,7 +56,7 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <summary>
         /// Deleta uma classe existente
         /// </summary>
-        /// <param name="id">Id da classe que serpa deletada</param>
+        /// <param name="id">Id da classe que será deletada</param>
         public void Deletar(int id)
         {
             throw new NotImplementedException();
@@ -69,7 +68,7 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <returns>Uma lista com as classes do jogo</returns>
         public List<Classe> Listar()
         {
-            //Retorna uma list com todas as informações das classes
+            //Retorna uma lista com todas as informações das classes
             return ctx.Classes.ToList();
         }
 
