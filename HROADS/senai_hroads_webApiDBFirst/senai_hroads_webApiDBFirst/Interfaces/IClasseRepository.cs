@@ -30,7 +30,7 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// <summary>
         /// Deleta uma classe existente
         /// </summary>
-        /// <param name="id">Id da classe que serpa deletada</param>
+        /// <param name="id">Id da classe que seráa deletada</param>
         void Deletar(int id);
 
         /// <summary>

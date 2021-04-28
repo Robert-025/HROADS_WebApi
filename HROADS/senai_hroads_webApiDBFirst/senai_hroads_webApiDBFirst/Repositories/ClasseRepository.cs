@@ -83,7 +83,10 @@ namespace senai_hroads_webApiDBFirst.Repositories
             return ctx.Classes.ToList();
         }
 
-
+        /// <summary>
+        /// Lista os jogos pela sua classe
+        /// </summary>
+        /// <returns>Uma lista de classe</returns>
         public List<Classe> ListarPersonagems()
         {
             //Retorna uma lista de classes com seus personagens
