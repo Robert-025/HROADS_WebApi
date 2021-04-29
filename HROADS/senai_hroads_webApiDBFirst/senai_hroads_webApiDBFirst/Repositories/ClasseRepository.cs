@@ -90,7 +90,7 @@ namespace senai_hroads_webApiDBFirst.Repositories
         public List<Classe> ListarPersonagems()
         {
             //Retorna uma lista de classes com seus personagens
-            return ctx.Classes.Include(e => e.Personagems).ToList();
+            return ctx.Classes.Include(c => c.Personagems).ToList();
         }
     }
 }

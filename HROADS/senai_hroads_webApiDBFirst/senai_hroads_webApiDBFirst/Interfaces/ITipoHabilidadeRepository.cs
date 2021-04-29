@@ -24,7 +24,7 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// Busca um TipoHabilidade pelo seu id
         /// </summary>
         /// <returns>O TipoHabilidade buscado</returns>
-        TipoHabilidade BuscarPorId();
+        TipoHabilidade BuscarPorId(int id);
 
         /// <summary>
         /// Deleta um TipoHabilidade existente

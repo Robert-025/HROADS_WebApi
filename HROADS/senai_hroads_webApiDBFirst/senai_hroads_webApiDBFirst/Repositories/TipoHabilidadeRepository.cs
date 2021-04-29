@@ -1,4 +1,5 @@
-﻿using senai_hroads_webApiDBFirst.Contexts;
+﻿using Microsoft.EntityFrameworkCore;
+using senai_hroads_webApiDBFirst.Contexts;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using System;
@@ -22,16 +23,31 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <param name="tHabilidadeAtualizada">Objeto com as novas informações que serão atualizadas</param>
         public void Atualizar(int id, TipoHabilidade tHabilidadeAtualizada)
         {
-            throw new NotImplementedException();
+            //Busca um tipo de habilidade através do id
+            TipoHabilidade tipoBuscado = ctx.TipoHabilidades.Find(id);
+
+            //Verifica se o nome do tipoHabilidade foi informado
+            if (tipoBuscado.Nome != null)
+            {
+                //Atribui o novo valore ao campo
+                tipoBuscado.Nome = tHabilidadeAtualizada.Nome;
+            }
+
+            //Atualiza o tipoHabilidade que foi buscado
+            ctx.TipoHabilidades.Update(tipoBuscado);
+
+            //Salva as informações pra serem gravadas no banco de dados 
+            ctx.SaveChanges();
         }
 
         /// <summary>
         /// Busca um TipoHabilidade pelo seu id
         /// </summary>
-        /// <returns>O TipoHabilidade buscado</returns>
-        public TipoHabilidade BuscarPorId()
+        /// <returns>O TipoHabilidade busc ado</returns>
+        public TipoHabilidade BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            //Retorna o primeiro Tipo de habilidade encontrado para o ID informado
+            return ctx.TipoHabilidades.FirstOrDefault(t => t.IdTipo == id);
         }
 
         /// <summary>
@@ -40,7 +56,11 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <param name="novoTipoHabilidade">Objeto com as informações para serem cadastradas.</param>
         public void Cadastrar(TipoHabilidade novoTipoHabilidade)
         {
-            throw new NotImplementedException();
+            //Chama o método do EF Core que adiciona o novoTipoHabilidade
+            ctx.TipoHabilidades.Add(novoTipoHabilidade);
+
+            //Salva as informações no banco de dados
+            ctx.SaveChanges();
         }
 
         /// <summary>
@@ -49,7 +69,14 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <param name="id">Id do TipoHabilidade buscado</param>
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            //Busca o tipo de habilidade pelo seu id
+            TipoHabilidade tipoBuscado = ctx.TipoHabilidades.Find(id);
+
+            //Remove o tipo de habilidade que foi buscado
+            ctx.TipoHabilidades.Remove(tipoBuscado);
+
+            //Salva as alterações no banco de dados
+            ctx.SaveChanges();
         }
 
         /// <summary>
@@ -68,7 +95,8 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <returns>Uma lista de TipoHabilidades</returns>
         public List<TipoHabilidade> ListarHabilidades()
         {
-            throw new NotImplementedException();
+            //Retorna uma lista de tipos de habilidades com suas habilidades
+            return ctx.TipoHabilidades.Include(t => t.Habilidades).ToList();
         }
     }
 }

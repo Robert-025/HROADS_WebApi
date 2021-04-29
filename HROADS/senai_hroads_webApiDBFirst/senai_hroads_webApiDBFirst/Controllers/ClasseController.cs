@@ -43,7 +43,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="id">Id da classe que será buscada</param>
         /// <returns>Uma classe encontrada e um status code 200 - Ok </returns>
-        [HttpGet("{Id}")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             // Retorna a resposta da requisição fazendo a chamada para o método
@@ -100,7 +100,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// Lista todas as classes com seus respectivos Personagens
         /// </summary>
         /// <returns>Uma lista de Classes com os Personagens e um status code 200 - OK</returns>
-        [HttpGet("Personagems")]
+        [HttpGet("personagems")]
         public IActionResult GetPersonagems()
         {
             return Ok(_classeRepository.ListarPersonagems());

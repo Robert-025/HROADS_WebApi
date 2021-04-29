@@ -20,14 +20,14 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// <summary>
         /// Listar o Usuario pelo seu TipoUsuario
         /// </summary>
-        /// <return>Uma Lista de TipoUsuario</return>
+        /// <return>Uma Lista de TipoUsuario com seus usuarios</return>
         List<TiposUsuario> ListarUsuario();
 
         /// <summary>
         /// Buscar um TipoUsuario pelo seu id 
         /// </summary>
         /// <return>Os TiposUsuario buscado</return>
-        TiposUsuario BuscarPorId();
+        TiposUsuario BuscarPorId(int id);
 
         /// <summary>
         /// Deleta um TipoUsuario existente
@@ -40,14 +40,12 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// </summary>
         /// <param name="id">Id dos TiposUsuario que vai ser atualizado</param>
         /// <param name="tUsuarioAtualizada">Objeto com as novas informações que serão atualizadas</param>
-
         void Atualizar(int id, TiposUsuario tUsuarioAtualizada);
 
         /// <summary>
         /// Cadastra um novo TiposUsuario
         /// </summary>
         /// <param name="novoTiposUsuarios">Objetos com as informações para serem cadastradas</param>
-
         void Cadastrar(TiposUsuario novoTiposUsuarios);
     }
 
