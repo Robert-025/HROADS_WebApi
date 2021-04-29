@@ -6,46 +6,42 @@ using System.Threading.Tasks;
 
 namespace senai_hroads_webApiDBFirst.Interfaces
 {
+    /// <summary>
+    /// Interface responsável pela classe HabilidadeRepository
+    /// </summary>
     interface IHabilidadeRepository
     {
+        /// <summary>
+        /// LIsta de todas as Habildades
+        /// </summary>
+        /// <returns>Uma lista com as habilidades das classes </returns>
+        List<Habilidade> Listar();
+
 
         /// <summary>
-        /// Interface responsável pela classe HabilidadeRepository
+        /// Busca uma Habilidade pelo seu id
         /// </summary>
-        interface IHabilidadeRepository
-        {
-            /// <summary>
-            /// LIsta de todas as Habildades
-            /// </summary>
-            /// <returns>Uma lista com as habilidades das classes </returns>
-            List<Habilidade> Listar();
+        /// <param name="id">Id habilidade que será buscada</param>
+        /// <returns>A Habilidade buscada</returns>
+        Habilidade BuscarPorId(int id);
 
+        /// <summary>
+        /// Deletar uma Habilidade existente
+        /// </summary>
+        /// <param name="id">Id da habilidade que serpa deletada</param>
+        void Deletar(int id);
 
-            /// <summary>
-            /// Busca uma Habilidade pelo seu id
-            /// </summary>
-            /// <param name="id">Id habilidade que será buscada</param>
-            /// <returns>A Habilidade buscada</returns>
-            Habilidade BuscarPorId(int id);
+        /// <summary>
+        /// Cadastra uma nova Habildade
+        /// </summary>
+        /// <param name="novaHabilidade">Objeto com as informações que sera cadastradas</param>
+        void Cadastrar(Habilidade novaHabilidade);
 
-            /// <summary>
-            /// Deletar uma Habilidade existente
-            /// </summary>
-            /// <param name="id">Id da habilidade que serpa deletada</param>
-            void Deletar(int id);
-
-            /// <summary>
-            /// Cadastra uma nova Habildade
-            /// </summary>
-            /// <param name="novaHabilidade">Objeto com as informações que sera cadastradas</param>
-            void Cadastrar(Habilidade novaHabilidade);
-
-            /// <summary>
-            /// Atualiza uma Habilidade passando o seu id na url da requisição
-            /// </summary>
-            /// <param name="id">Id da Habilidade que será atualizada</param>
-            /// <param name="HabilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
-            void Atualizar(int id, Habilidade HabilidadeAtualizada);
-        }
+        /// <summary>
+        /// Atualiza uma Habilidade passando o seu id na url da requisição
+        /// </summary>
+        /// <param name="id">Id da Habilidade que será atualizada</param>
+        /// <param name="HabilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
+        void Atualizar(int id, Habilidade HabilidadeAtualizada);
     }
 }

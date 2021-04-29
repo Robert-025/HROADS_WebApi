@@ -172,3 +172,6 @@ C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads
 C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.RazorTargetAssemblyInfo.cache
 C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.csproj.CopyComplete
 C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.genruntimeconfig.cache
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
