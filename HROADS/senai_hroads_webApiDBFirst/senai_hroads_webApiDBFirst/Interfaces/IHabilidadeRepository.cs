@@ -17,6 +17,12 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// <returns>Uma lista com as habilidades das classes </returns>
         List<Habilidade> Listar();
 
+        /// <summary>
+        /// Lista todas as habilidades com seus tipos
+        /// </summary>
+        /// <returns>Uma lista com as habilidades e seus tipos</returns>
+        List<Habilidade> ListarTipoHabilidade();
+
 
         /// <summary>
         /// Busca uma Habilidade pelo seu id

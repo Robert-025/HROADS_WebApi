@@ -15,6 +15,12 @@ namespace senai_hroads_webApi.Interfaces
         List<Personagem> ListarTodos();
 
         /// <summary>
+        /// Lista todos os personagems com suas classes
+        /// </summary>
+        /// <returns>Uma lista com os personagems e suas classes</returns>
+        List<Personagem> ListarClasses();
+
+        /// <summary>
         /// Busca um personagem pelo id
         /// </summary>
         /// <param name="id">Id do personagem buscadao/param>
