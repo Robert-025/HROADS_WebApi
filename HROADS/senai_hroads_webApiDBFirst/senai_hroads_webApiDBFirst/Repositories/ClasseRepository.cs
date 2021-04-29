@@ -74,7 +74,7 @@ namespace senai_hroads_webApiDBFirst.Repositories
         }
 
         /// <summary>
-        /// LIsta todas as classes
+        /// Lista todas as classes
         /// </summary>
         /// <returns>Uma lista com as classes do jogo</returns>
         public List<Classe> Listar()
