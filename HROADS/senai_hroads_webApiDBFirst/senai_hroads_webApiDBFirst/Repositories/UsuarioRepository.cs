@@ -11,35 +11,27 @@ namespace senai.hroads.webApi.Repositories
     {
         HroadsContext ctx = new HroadsContext();
 
-        public void AtualizarEmail(int id, Usuario NovoUsaurio)
+        public void Atualizar(int id, Usuario novoUsuario)
         {
             Usuario UsuarioBuscado = ctx.Usuarios.Find(id);
 
-            if (NovoUsaurio.Email != null)
+            if (novoUsuario.Email != null)
             {
-                UsuarioBuscado.Email = NovoUsaurio.Email;
+                UsuarioBuscado.Email = novoUsuario.Email;
+            }
+
+            if (novoUsuario.Senha != null)
+            {
+                UsuarioBuscado.Senha = novoUsuario.Senha;
             }
 
             ctx.Usuarios.Update(UsuarioBuscado);
             ctx.SaveChanges();
         }
 
-        public void AtualizarSenha(int id, Usuario NovoUsuario)
+        public Usuario BuscarPorId(int id)
         {
-            Usuario UsuarioBuscado = ctx.Usuarios.Find(id);
-
-            if (NovoUsuario.Senha != null)
-            {
-                UsuarioBuscado.Senha = NovoUsuario.Senha;
-            }
-
-            ctx.Usuarios.Update(UsuarioBuscado);
-            ctx.SaveChanges();
-        }
-
-        public Usuario BuscarId(int id)
-        {
-            return ctx.Usuarios.FirstOrDefault(e => e.IdUsuario == id);
+            return ctx.Usuarios.FirstOrDefault(e => e.IdUsuarios == id);
         }
 
         public void Cadastrar(Usuario NovoUsuario)
@@ -60,9 +52,9 @@ namespace senai.hroads.webApi.Repositories
             return ctx.Usuarios.ToList();
         }
 
-        public List<Usuario> ListarTudo()
+        public List<Usuario> ListarTipoUsuario()
         {
-            return ctx.Usuarios.Include(e => e.IdTipoUsuario).ToList();
+            return ctx.Usuarios.Include(e => e.IdTiposUsuariosNavigation).ToList();
         }
 
         public Usuario Login(string email, string senha)

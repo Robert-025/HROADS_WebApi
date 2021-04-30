@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using senai_hroads_webApi.Interfaces;
 using senai_hroads_webApiDBFirst.Contexts;
 using senai_hroads_webApiDBFirst.Domains;
@@ -12,40 +13,45 @@ namespace senai.hroads.webApi.Repositories
     {
         HroadsContext ctx = new HroadsContext();
 
-        public void Atualizar(int id, Personagem NovoPer)
+        public void Atualizar(int id, Personagem novoPersonagem)
         {
-            Personagem PerBuscado = ctx.Personagems.Find(id);
+            Personagem personagemBuscado = ctx.Personagems.Find(id);
 
-            if (NovoPer.NomePersonagem != null)
+            if (novoPersonagem.Nome != null)
             {
-                PerBuscado.NomePersonagem = NovoPer.NomePersonagem;
+                personagemBuscado.Nome = personagemBuscado.Nome;
             }
 
-            ctx.Personagems.Update(PerBuscado);
+            ctx.Personagems.Update(personagemBuscado);
             ctx.SaveChanges();
         }
 
-        public Personagem BuscarId(int id)
+        public Personagem BuscarPorId(int id)
         {
             return ctx.Personagems.FirstOrDefault(e => e.IdPersonagem == id);
         }
 
-        public void Cadastrar(Personagem NovoPer)
+        public void Cadastrar(Personagem novoPersonagem)
         {
-            ctx.Personagems.Add(NovoPer);
+            ctx.Personagems.Add(novoPersonagem);
             ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            Personagem PerBuscado = ctx.Personagems.Find(id);
-            ctx.Personagems.Remove(PerBuscado);
+            Personagem personagemBuscado = ctx.Personagems.Find(id);
+            ctx.Personagems.Remove(personagemBuscado);
             ctx.SaveChanges();
         }
 
         public List<Personagem> Listar()
         {
             return ctx.Personagems.ToList();
+        }
+
+        public List<Personagem> ListarClasses()
+        {
+            return ctx.Personagems.Include(p => p.IdClasseNavigation).ToList();
         }
     }
 }
