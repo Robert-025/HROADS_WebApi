@@ -28,9 +28,9 @@ namespace senai_hroads_webApiDBFirst.Repositories
                 classeBuscado.Nome = classeAtualizada.Nome;
             }
 
-            //atualiza a classe buscada
+            //Atualiza a classe buscada
             ctx.Classes.Update(classeBuscado);
-            // Salva as informações para serem gravadas no banco de dados
+            //Salva as informações para serem gravadas no banco de dados
             ctx.SaveChanges();
         }
 

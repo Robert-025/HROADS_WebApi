@@ -16,41 +16,58 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// </summary>
         HroadsContext ctx = new HroadsContext();
 
-        public void Atualizar(int id, Habilidade HabilidadeAtualizada)
+        public void Atualizar(int id, Habilidade habilidadeAtualizada)
         {
-            throw new NotImplementedException();
+            //Cria um objeto que recebe o resultado da busca da habilidade pelo id
+            Habilidade habilidadeBuscada = ctx.Habilidades.Find(id);
+
+            //Verifica se existe algum nome informado
+            if (habilidadeAtualizada.Nome != null)
+            {
+                //Caso haja, passa as informações para a habilidadeBuscada
+                habilidadeBuscada.Nome = habilidadeAtualizada.Nome;
+            }
+
+            //Atualiza a habilidadeBuscada
+            ctx.Habilidades.Update(habilidadeBuscada);
+
+            //Salva as informações para mandar para o banco de dados
+            ctx.SaveChanges();
         }
 
         public Habilidade BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            // Retorna a primeira informação encontrada para o ID informado
+            return ctx.Habilidades.FirstOrDefault(h => h.IdHabilidade == id);
         }
 
         public void Cadastrar(Habilidade novaHabilidade)
         {
-            throw new NotImplementedException();
+            //Adiciona a novaHabilidade 
+            ctx.Habilidades.Add(novaHabilidade);
+
+            //Salva as informações para serem inseridas no banco de dados
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            //Cria um objeto recebendo a informação buscada pelo ctx
+            Habilidade habilidadeBuscada = ctx.Habilidades.Find(id);
+
+            //Remove a habilidade buscada
+            ctx.Habilidades.Remove(habilidadeBuscada);
+
+            //Salva as alterações
+            ctx.SaveChanges();
         }
 
-        /// <summary>
-        /// Lista todas as habilidades
-        /// </summary>
-        /// <returns>Uma lista com as habilidades</returns>
         public List<Habilidade> Listar()
         {
             //Retorna o comando para listar as habilidades
             return ctx.Habilidades.ToList();
         }
 
-
-        /// <summary>
-        /// Lista as habilidades com seu tipo de habilidade
-        /// </summary>
-        /// <returns>Uma lista de habilidades com seus tipos</returns>
         public List<Habilidade> ListarTipoHabilidade()
         {
             return ctx.Habilidades.Include(h => h.IdTipoNavigation).ToList();

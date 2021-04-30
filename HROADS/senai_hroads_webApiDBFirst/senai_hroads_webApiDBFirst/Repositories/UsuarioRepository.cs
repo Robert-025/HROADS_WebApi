@@ -13,19 +13,20 @@ namespace senai.hroads.webApi.Repositories
 
         public void Atualizar(int id, Usuario novoUsuario)
         {
-            Usuario UsuarioBuscado = ctx.Usuarios.Find(id);
+            Usuario usuarioBuscado = ctx.Usuarios.Find(id);
 
             if (novoUsuario.Email != null)
             {
-                UsuarioBuscado.Email = novoUsuario.Email;
+                usuarioBuscado.Email = novoUsuario.Email;
             }
 
             if (novoUsuario.Senha != null)
             {
-                UsuarioBuscado.Senha = novoUsuario.Senha;
+                usuarioBuscado.Senha = novoUsuario.Senha;
             }
 
-            ctx.Usuarios.Update(UsuarioBuscado);
+            ctx.Usuarios.Update(usuarioBuscado);
+
             ctx.SaveChanges();
         }
 
@@ -37,13 +38,16 @@ namespace senai.hroads.webApi.Repositories
         public void Cadastrar(Usuario NovoUsuario)
         {
             ctx.Usuarios.Add(NovoUsuario);
+            
             ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
             Usuario UsuarioBuscado = ctx.Usuarios.Find(id);
+            
             ctx.Usuarios.Remove(UsuarioBuscado);
+            
             ctx.SaveChanges();
         }
 
