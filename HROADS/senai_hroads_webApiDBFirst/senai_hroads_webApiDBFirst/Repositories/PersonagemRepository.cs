@@ -16,6 +16,11 @@ namespace senai.hroads.webApi.Repositories
         /// </summary>
         HroadsContext ctx = new HroadsContext();
 
+        /// <summary>
+        /// Atualiza um personagem
+        /// </summary>
+        /// <param name="id">Id do personagem que será atualizado</param>
+        /// <param name="novoPersonagem">Objeto com as informações a serem atualizadas</param>
         public void Atualizar(int id, Personagem novoPersonagem)
         {
             //Busca um personagem pelo seu Id
@@ -56,13 +61,21 @@ namespace senai.hroads.webApi.Repositories
             ctx.SaveChanges();
         }
 
+        /// <summary>
+        /// Busca um personagem pelo seu id
+        /// </summary>
+        /// <param name="id">Id do personagem que será buscado</param>
+        /// <returns>Retorna o personagem buscado</returns>
         public Personagem BuscarPorId(int id)
         {
             //Retorna a busca do id verificando se existe algum igual ao informado no objeto IdPersonagem
             return ctx.Personagems.FirstOrDefault(e => e.IdPersonagem == id);
         }
 
-
+        /// <summary>
+        /// Cadastra um novo personagem
+        /// </summary>
+        /// <param name="novoPersonagem">Objeto com as informações que serão cadastradas</param>
         public void Cadastrar(Personagem novoPersonagem)
         {
             //Adiciona o novoPersonagem
@@ -72,6 +85,10 @@ namespace senai.hroads.webApi.Repositories
             ctx.SaveChanges();
         }
 
+        /// <summary>
+        /// Deleta um personagem existente
+        /// </summary>
+        /// <param name="id">Id do personagem que será deletado</param>
         public void Deletar(int id)
         {
             //Procura um personagem pelo id informado
@@ -84,12 +101,20 @@ namespace senai.hroads.webApi.Repositories
             ctx.SaveChanges();
         }
 
+        /// <summary>
+        /// Lista todos os personagens
+        /// </summary>
+        /// <returns>Uma lista com os personagens</returns>
         public List<Personagem> Listar()
         {
             //Chama o método de listar, listando os personagems  
             return ctx.Personagems.ToList();
         }
-
+        
+        /// <summary>
+        /// Lista os personagens com suas classes
+        /// </summary>
+        /// <returns>Retorna uma lista de classes com suas classes</returns>
         public List<Personagem> ListarClasses()
         {
             //Lista os personagens incluindo as classes que ele pertence

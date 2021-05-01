@@ -30,6 +30,7 @@ namespace senai_hroads_webApiDBFirst.Repositories
 
             //Atualiza a classe buscada
             ctx.Classes.Update(classeBuscado);
+
             //Salva as informações para serem gravadas no banco de dados
             ctx.SaveChanges();
         }
@@ -41,7 +42,7 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <returns>A classe buscada</returns>
         public Classe BuscarPorId(int id)
         {
-            // Retorna a primeira classe encontrada para o ID informado
+            //Retorna a primeira classe encontrada para o ID informado
             return ctx.Classes.FirstOrDefault(e => e.IdClasse == id);
         }
 
@@ -51,10 +52,10 @@ namespace senai_hroads_webApiDBFirst.Repositories
         /// <param name="novaClasse">Objeto com as informações que serão cadastradas</param>
         public void Cadastrar(Classe novaClasse)
         {
-            // Adiciona essa novaClasse
+            //Adiciona essa novaClasse
             ctx.Classes.Add(novaClasse);
 
-            // Salva as informaçoes para serem gravadas no banco de dados
+            //Salva as informaçoes para serem gravadas no banco de dados
             ctx.SaveChanges();
         }
 
