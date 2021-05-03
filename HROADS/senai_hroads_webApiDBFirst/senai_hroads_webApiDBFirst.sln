@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "senai_hroads_webApiDBFirst", "senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst.csproj", "{49663BF0-BB69-4D05-9CCD-6B057F8F9864}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "senai_hroads_webApiDBFirst", "senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst.csproj", "{49663BF0-BB69-4D05-9CCD-6B057F8F9864}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

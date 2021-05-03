@@ -6,7 +6,9 @@ using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace senai_hroads_webApiDBFirst
@@ -26,6 +28,17 @@ namespace senai_hroads_webApiDBFirst
                     //Ignora os vlaores nulos ao fazer junções nas consultas
                     options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore; 
                 });
+
+            // Registra o gerador do Swagger , definindo um ou mais documentos
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Games.webApi", Version = "v1" });
+                // Ajusta o caminho  do Swagger para o xml e ou Json
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +54,14 @@ namespace senai_hroads_webApiDBFirst
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            //Habilita o uso do Swagger
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "HroadsGames.webApi");
+                c.RoutePrefix = string.Empty;
             });
         }
     }

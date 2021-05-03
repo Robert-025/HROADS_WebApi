@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\10\\Desktop\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {}
+    "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\PastaTeste\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {}
   },
   "projects": {
-    "C:\\Users\\10\\Desktop\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {
+    "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\PastaTeste\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\10\\Desktop\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
+        "projectUniqueName": "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\PastaTeste\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
         "projectName": "senai_hroads_webApiDBFirst",
-        "projectPath": "C:\\Users\\10\\Desktop\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
-        "packagesPath": "C:\\Users\\10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\10\\Desktop\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\obj\\",
+        "projectPath": "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\PastaTeste\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst.csproj",
+        "packagesPath": "C:\\Users\\Luana e Regis\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luana e Regis\\Desktop\\Segundo Semestre Senai\\PastaTeste\\HROADS_WebApi\\HROADS\\senai_hroads_webApiDBFirst\\senai_hroads_webApiDBFirst\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\10\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luana e Regis\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,6 +60,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.5, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
             }
           },
           "imports": [
