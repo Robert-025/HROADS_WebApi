@@ -243,3 +243,4 @@ C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\H
 C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.csproj.CopyComplete
 C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.xml
 C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.genruntimeconfig.cache
+C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

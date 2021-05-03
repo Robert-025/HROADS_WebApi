@@ -103,6 +103,17 @@
             <param name="id">Id da habilidade que será deletada</param>
             <returns>Um status code 204 - NoContent</returns>
         </member>
+        <member name="T:senai_hroads_webApiDBFirst.Controllers.LoginController">
+            <summary>
+            Controller responsavel pelos endpoints ao Login
+            </summary>
+            
+        </member>
+        <member name="P:senai_hroads_webApiDBFirst.Controllers.LoginController._usuarioRepository">
+            <summary>
+            Objeto que irá receber os métodos definidos na interface IUsuarioRepository
+            </summary>
+        </member>
         <member name="P:senai_hroads_webApiDBFirst.Controllers.TipoHabilidadeController._tipoHabilidadeRepository">
             <summary>
             Objeto que instancia a interface ITipoHabilidadeRepository para ter acesso aos métodos lá criados
@@ -450,6 +461,14 @@
             Deleta um usuario existente
             </summary>
             <param name="id">Id do usuario que será deletado</param>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuario
+            </summary>
+            <param name="email"></param>
+            <param name="senha"></param>
+            <returns>Um objeto do tipo usuario que foi buscado</returns>
         </member>
         <member name="F:senai_hroads_webApiDBFirst.Repositories.ClasseRepository.ctx">
             <summary>

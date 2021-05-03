@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using senai.hroads.webApi.Repositories;
+using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using senai_hroads_webApiDBFirst.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace senai_hroads_webApiDBFirst.Controllers
@@ -37,16 +41,51 @@ namespace senai_hroads_webApiDBFirst.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel login)
+        public IActionResult Post(LoginViewModel login)
         {
             try
             {
-                Usuario
+                //Busca usuário por email e senha
+                Usuario usuarioBuscado = _usuarioRepository.Login(login.Email, login.Senha);
+
+                if (usuarioBuscado == null)
+                {
+                    return NotFound("E-mail ou senha inválidos");
+                }
+
+                var claims = new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
+
+                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuarios.ToString()),
+
+                    new Claim(ClaimTypes.Role, usuarioBuscado.IdTiposUsuarios.ToString())
+                };
+
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("hroads - chave - autenticacao"));
+
+                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                var token = new JwtSecurityToken(
+                    issuer: "hroads.webApi",
+                    audience: "hroads.webApi",
+                    claims: claims,
+                    expires: DateTime.Now.AddMinutes(30),
+                    signingCredentials: creds
+                    );
+
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(token)
+                });
+                    
+
+
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                return BadRequest(ex);
             }
 
         }

@@ -45,5 +45,13 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// </summary>
         /// <param name="id">Id do usuario que será deletado</param>
         void Deletar(int id);
+
+        /// <summary>
+        /// Valida o usuario
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns>Um objeto do tipo usuario que foi buscado</returns>
+        Usuario Login(string email, string senha);
     }
 }
