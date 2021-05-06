@@ -40,6 +40,12 @@ namespace senai_hroads_webApiDBFirst.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+
+        /// <summary>
+        /// Valida o usuario
+        /// </summary>
+        /// <param name="login">Objeto com os parâmetros que serão validados</param>
+        /// <returns>Um status code 200 - OK com o token ou um badRequest</returns>
         [HttpPost]
         public IActionResult Post(LoginViewModel login)
         {
@@ -62,7 +68,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
                     new Claim(ClaimTypes.Role, usuarioBuscado.IdTiposUsuarios.ToString())
                 };
 
-                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("hroads - chave - autenticacao"));
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("hroads-chave-autenticacao"));
 
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 

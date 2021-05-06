@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
@@ -71,6 +72,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="novaHabilidade">Objeto com as informações que serão cadastradas</param>
         /// <returns>Um status code 201 - Created</returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(Habilidade novaHabilidade)
         {
@@ -86,11 +88,29 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="id">Id da habilidade que será deletada</param>
         /// <returns>Um status code 204 - NoContent</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             _habilidadeRepository.Deletar(id);
 
+            return StatusCode(204);
+        }
+
+        /// <summary>
+        /// Atualiza uma habilidade passando seu id na url
+        /// </summary>
+        /// <param name="id">Id da habilidade que vai ser atualizada</param>
+        /// <param name="habilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
+        /// <returns>Um status code 204 - NoContent</returns>
+        [Authorize(Roles = "1")]
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, Habilidade habilidadeAtualizada)
+        {
+            //Chama o método de atualizar passando os parâmetros id e o objeto com as informações
+            _habilidadeRepository.Atualizar(id, habilidadeAtualizada);
+
+            //Retorna o status code
             return StatusCode(204);
         }
     }

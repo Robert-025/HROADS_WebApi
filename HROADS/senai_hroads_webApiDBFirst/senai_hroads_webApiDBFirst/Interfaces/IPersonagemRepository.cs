@@ -23,14 +23,14 @@ namespace senai_hroads_webApi.Interfaces
         /// <summary>
         /// Busca um personagem pelo id
         /// </summary>
-        /// <param name="id">Id do personagem buscadao/param>
-        /// <returns>Personagem buscado</returns>
+        /// <param name="id">Id do personagem que vai ser buscado</param>
+        /// <returns>O personagem buscado</returns>
         Personagem BuscarPorId(int id);
 
         /// <summary>
         /// Cadastra um novo personagem
         /// </summary>
-        /// <param name="novaHabilidade"> Objeto novoPersonagem que será cadastrada</param>
+        /// <param name="novoPersonagem">id do personagem que será atualizado</param>
         void Cadastrar(Personagem novoPersonagem);
 
 
@@ -38,7 +38,7 @@ namespace senai_hroads_webApi.Interfaces
         /// Atualiza um personagem já existente
         /// </summary>
         /// <param name="id">id do personagem que será atualizado</param>
-        /// <param name="habilidadeAtualizada"> objeto personagemAtualizado com as novas informações</param>
+        /// <param name="personagemAtualizado"> objeto personagemAtualizado com as novas informações</param>
         void Atualizar(int id, Personagem personagemAtualizado);
 
         /// <summary>

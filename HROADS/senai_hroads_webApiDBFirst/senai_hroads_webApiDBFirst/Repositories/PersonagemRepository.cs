@@ -33,27 +33,6 @@ namespace senai.hroads.webApi.Repositories
                 personagemBuscado.Nome = novoPersonagem.Nome;
             }
 
-            //Verifica se o atributo é diferente de nulo, ou seja, se ele existe
-            if (novoPersonagem.IdClasse != null)
-            {
-                //Caso exista, passa as infromações para o novoPersonagem
-                personagemBuscado.IdClasse = novoPersonagem.IdClasse;
-            }
-
-            //Verifica se o atributo é maior que zero
-            if (novoPersonagem.MáxVida > 0)
-            {
-                //Caso exista, passa as infromações para o novoPersonagem
-                personagemBuscado.MáxVida = novoPersonagem.MáxVida;
-            }
-
-            //Verifica se o atributo é maior que zero
-            if (novoPersonagem.MáxMana > 0)
-            {
-                //Caso exista, passa as infromações para o novoPersonagem
-                personagemBuscado.MáxMana = novoPersonagem.MáxMana;
-            }
-
             //Chama o update para atualizar o personagemBuscado
             ctx.Personagems.Update(personagemBuscado);
 

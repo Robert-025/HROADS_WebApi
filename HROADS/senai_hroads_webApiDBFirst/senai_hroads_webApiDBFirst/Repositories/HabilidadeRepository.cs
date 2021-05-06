@@ -33,6 +33,13 @@ namespace senai_hroads_webApiDBFirst.Repositories
                 habilidadeBuscada.Nome = habilidadeAtualizada.Nome;
             }
 
+            //Verifica se existe algum idTipo informado
+            if (habilidadeAtualizada.IdTipo > 0)
+            {
+                //Caso haja, passa as informações para a habilidadeBuscada
+                habilidadeBuscada.IdTipo = habilidadeAtualizada.IdTipo;
+            }
+
             //Atualiza a habilidadeBuscada
             ctx.Habilidades.Update(habilidadeBuscada);
 

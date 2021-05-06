@@ -244,3 +244,11 @@ C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\H
 C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.xml
 C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.genruntimeconfig.cache
 C:\Users\Luana e Regis\Desktop\Segundo Semestre Senai\PastaTeste\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\senai_hroads_webApiDBFirst.xml
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Microsoft.OpenApi.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\10\Desktop\HROADS_WebApi\HROADS\senai_hroads_webApiDBFirst\senai_hroads_webApiDBFirst\obj\Debug\net5.0\senai_hroads_webApiDBFirst.xml

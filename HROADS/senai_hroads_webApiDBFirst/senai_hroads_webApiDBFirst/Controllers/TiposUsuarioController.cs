@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
@@ -54,6 +55,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="novoTipoUsuario">Objeto com as informações que serão cadastradas</param>
         /// <returns>Um status code 201 - Created</returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(TiposUsuario novoTipoUsuario)
         {
@@ -70,6 +72,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// <param name="id">ID do tipoUsuario que vai ser atualizado</param>
         /// <param name="tipoUsuarioAtualizado">Objeto com as informações que serão atualizado</param>
         /// <returns>Um status code 204 - NoContent</returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, TiposUsuario tipoUsuarioAtualizado)
         {
@@ -85,6 +88,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="id">ID do tipo de usuario que vai ser deletado</param>
         /// <returns>Um status code 204 - NoContent</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

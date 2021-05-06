@@ -84,13 +84,9 @@ namespace senai.hroads.webApi.Repositories
             ctx.SaveChanges();
         }
 
-        /// <summary>
-        ///Lista todos os usuarios
-        /// </summary>
-        /// <returns>Uma lista com todos os usuarios</returns>
         public List<Usuario> Listar()
         {
-            //Chama o método de listar
+            //Retorna uma lista com todas as informações das classes
             return ctx.Usuarios.ToList();
         }
 

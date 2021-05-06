@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
 using senai_hroads_webApiDBFirst.Repositories;
@@ -52,10 +53,10 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// <summary>
         /// Cadastra uma nova classe 
         /// </summary>
-        /// <param name="id">Objeto novaclasse que sera cadastrado </param>
+        /// <param name="novaClasse">Objeto novaclasse que sera cadastrado </param>
         /// <returns>Um status code 201 - Created </returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
-
         public IActionResult Post(Classe novaClasse)
         {
             // Faz a chamada para o metodo 
@@ -72,8 +73,8 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// <param name="id">Id do estudio que será atualizado</param>
         /// <param name="classeAtualizada">Objeto classeAtualizada com as novas informações </param>
         /// <returns>retorna um status code</returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
-
         public IActionResult Put(int id, Classe classeAtualizada)
         {
             //faz a chamada para o método 
@@ -87,6 +88,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="id">ID da classe que será deletada</param>
         /// <returns>Status code </returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

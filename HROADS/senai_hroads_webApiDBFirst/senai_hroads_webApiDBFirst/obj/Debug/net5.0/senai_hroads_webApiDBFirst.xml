@@ -31,7 +31,7 @@
             <summary>
             Cadastra uma nova classe 
             </summary>
-            <param name="id">Objeto novaclasse que sera cadastrado </param>
+            <param name="novaClasse">Objeto novaclasse que sera cadastrado </param>
             <returns>Um status code 201 - Created </returns>
         </member>
         <member name="M:senai_hroads_webApiDBFirst.Controllers.ClasseController.Put(System.Int32,senai_hroads_webApiDBFirst.Domains.Classe)">
@@ -103,6 +103,14 @@
             <param name="id">Id da habilidade que será deletada</param>
             <returns>Um status code 204 - NoContent</returns>
         </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.HabilidadeController.Put(System.Int32,senai_hroads_webApiDBFirst.Domains.Habilidade)">
+            <summary>
+            Atualiza uma habilidade passando seu id na url
+            </summary>
+            <param name="id">Id da habilidade que vai ser atualizada</param>
+            <param name="habilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
         <member name="T:senai_hroads_webApiDBFirst.Controllers.LoginController">
             <summary>
             Controller responsavel pelos endpoints ao Login
@@ -113,6 +121,69 @@
             <summary>
             Objeto que irá receber os métodos definidos na interface IUsuarioRepository
             </summary>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.LoginController.Post(senai_hroads_webApiDBFirst.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuario
+            </summary>
+            <param name="login">Objeto com os parâmetros que serão validados</param>
+            <returns>Um status code 200 - OK com o token ou um badRequest</returns>
+        </member>
+        <member name="T:senai_hroads_webApiDBFirst.Controllers.PersonagemController">
+            <summary>
+            Define que a resposta da API será em JSON
+            </summary>
+        </member>
+        <member name="P:senai_hroads_webApiDBFirst.Controllers.PersonagemController._personagemRepository">
+            <summary>
+            Objeto que instancia IPersonagemRepository que receberá os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.#ctor">
+            <summary>
+            Instancia o objeto PersonagemRepository para que haja referências dos métodos implementados no PersonagemRepository
+            </summary>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.Get">
+            <summary>
+            Lista todas as habilidades
+            </summary>
+            <returns>Um status code 200 - OK com a lista de habilidades</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.GetClasse">
+            <summary>
+            Lista todos os personagens e a classes que elas pertencem
+            </summary>
+            <returns>Um status code 200 - OK com os personagens e as classes</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.GetById(System.Int32)">
+            <summary>
+            Lista um personagem pelo seu id
+            </summary>
+            <param name="id">Id do personagem que vai ser buscado</param>
+            <returns>Um status code 200 - OK com o personagem buscada</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.Post(senai_hroads_webApiDBFirst.Domains.Personagem)">
+            <summary>
+            Cadastra um novo personagem
+            </summary>
+            <param name="novoPersonagem">Objeto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.Delete(System.Int32)">
+            <summary>
+            Deleta um personagem existente 
+            </summary>
+            <param name="id">Id do personagem que será deletado</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.PersonagemController.Patch(System.Int32,senai_hroads_webApiDBFirst.Domains.Personagem)">
+            <summary>
+            Atualiza um persongame passando seu id na url
+            </summary>
+            <param name="id">Id do personagem que vai ser atualizado</param>
+            <param name="personagemAtualizado">Objeto com as informações que serão atualizadas</param>
+            <returns>Um status code 204 - NoContent</returns>
         </member>
         <member name="P:senai_hroads_webApiDBFirst.Controllers.TipoHabilidadeController._tipoHabilidadeRepository">
             <summary>
@@ -211,6 +282,57 @@
             Define que a resposta da API será em JSON
             </summary>
         </member>
+        <member name="P:senai_hroads_webApiDBFirst.Controllers.UsuarioController._usuarioRepository">
+            <summary>
+            Objeto que instancia IUsuarioRepository que receberá os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.#ctor">
+            <summary>
+            Instancia o objeto usuarioRepository para que haja referências dos métodos implementados no ClasseRepository
+            </summary>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.Get">
+            <summary>
+            Lista os usuarios
+            </summary>
+            <returns>Um status code 200 - OK com as classes</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.GetById(System.Int32)">
+            <summary>
+            Busca um usuario através do seu ID
+            </summary>
+            <param name="id">Id do usuario que será buscado</param>
+            <returns>Um usuario encontrado e um status code 200 - Ok </returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.GetTiposUsuarios">
+            <summary>
+            Lista todos os usuariso com seus respectivos tipos de usuarios
+            </summary>
+            <returns>Uma lista de usuarios com os seus tipos e um status code 200 - OK</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.Post(senai_hroads_webApiDBFirst.Domains.Usuario)">
+            <summary>
+            Cadastra um novo usuario
+            </summary>
+            <param name="novoUsuario">Objeto com as informações que serão cadastradas</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuario
+            </summary>
+            <param name="id">Id do usuario que será deletado</param>
+            <returns>U  status code 204 - NoContent</returns>
+        </member>
+        <member name="M:senai_hroads_webApiDBFirst.Controllers.UsuarioController.Put(System.Int32,senai_hroads_webApiDBFirst.Domains.Usuario)">
+            <summary>
+            Atualiza um usuario existente
+            </summary>
+            <param name="id">Id do usuario que vai ser atualizado</param>
+            <param name="usuarioAtualizado">Objeto com as informações que serão atualizadas</param>
+            <returns>Um status code 204 - NoContent</returns>
+        </member>
         <member name="T:senai_hroads_webApiDBFirst.Interfaces.IClasseRepository">
             <summary>
             Interface responsável pela classe ClasseRepository
@@ -254,49 +376,6 @@
             <param name="id">Id da classe que será atualizada</param>
             <param name="classeAtualizada">Objeto com as informações que serão atualizadas</param>
         </member>
-        <member name="T:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository">
-            <summary>
-            Interface responsável pela HabilidadeClasse HabilidadeRepository
-            </summary>
-        </member>
-        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository.Listar">
-            <summary>
-            Lista todaa as habilidadesClasse
-            </summary>
-            <returns>Uma lista habilidadeClasse</returns>
-        </member>
-        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository.ListarPersonagem">
-            <summary>
-            Lista os jogos pela sua HabilidadeClasse
-            </summary>
-            <returns>Uma lista de HabilidadeClasse</returns>
-        </member>
-        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository.BuscarPorId(System.Int32)">
-            <summary>
-            Busca uma HabilidadeClasse pelo seu 
-            </summary>
-            <param name="id">Id da HabilidadeClasse que será buscada</param>
-            <returns>A HabilidadeClasse</returns>
-        </member>
-        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository.Deletar(System.Int32)">
-             <summary>
-            Deleta uma HabilidadeClasse 
-             </summary>
-             <param name="id">Id da HabilidadeClasse que sera deletada</param>
-        </member>
-        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository.Cadastrar(senai_hroads_webApiDBFirst.Domains.HabilidadeClasse)">
-            <summary>
-            Cadastra HabilidadeClasse
-            </summary>
-            <param name="novaHabilidadeClasse">Objeto com informações que serão cadastradas</param>
-        </member>
-        <member name="M:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeClasseRepository.Atualizar(System.Int32,senai_hroads_webApiDBFirst.Domains.HabilidadeClasse)">
-            <summary>
-            Atualiza uma HabilidadeClasse passando seu id na url requisição
-            </summary>
-            <param name="id">Id da classe que será atualizada</param>
-            <param name="HabilidadeClasseAtualizada">Objeto com as informações que serão atualizadas</param>
-        </member>
         <member name="T:senai_hroads_webApiDBFirst.Interfaces.IHabilidadeRepository">
             <summary>
             Interface responsável pela classe HabilidadeRepository
@@ -338,7 +417,7 @@
             Atualiza uma Habilidade passando o seu id na url da requisição
             </summary>
             <param name="id">Id da Habilidade que será atualizada</param>
-            <param name="HabilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
+            <param name="habilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
         </member>
         <member name="T:senai_hroads_webApiDBFirst.Interfaces.ITipoHabilidadeRepository">
             <summary>
@@ -646,19 +725,25 @@
             </summary>
             <returns>Uma lista com os personagems e suas classes</returns>
         </member>
-        <!-- Badly formed XML comment ignored for member "M:senai_hroads_webApi.Interfaces.IPersonagemRepository.BuscarPorId(System.Int32)" -->
+        <member name="M:senai_hroads_webApi.Interfaces.IPersonagemRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um personagem pelo id
+            </summary>
+            <param name="id">Id do personagem que vai ser buscado</param>
+            <returns>O personagem buscado</returns>
+        </member>
         <member name="M:senai_hroads_webApi.Interfaces.IPersonagemRepository.Cadastrar(senai_hroads_webApiDBFirst.Domains.Personagem)">
             <summary>
             Cadastra um novo personagem
             </summary>
-            <param name="novaHabilidade"> Objeto novoPersonagem que será cadastrada</param>
+            <param name="novoPersonagem">id do personagem que será atualizado</param>
         </member>
         <member name="M:senai_hroads_webApi.Interfaces.IPersonagemRepository.Atualizar(System.Int32,senai_hroads_webApiDBFirst.Domains.Personagem)">
             <summary>
             Atualiza um personagem já existente
             </summary>
             <param name="id">id do personagem que será atualizado</param>
-            <param name="habilidadeAtualizada"> objeto personagemAtualizado com as novas informações</param>
+            <param name="personagemAtualizado"> objeto personagemAtualizado com as novas informações</param>
         </member>
         <member name="M:senai_hroads_webApi.Interfaces.IPersonagemRepository.Deletar(System.Int32)">
             <summary>
@@ -738,12 +823,6 @@
             Deleta um usuario existente
             </summary>
             <param name="id">Id do usuario buscado</param>
-        </member>
-        <member name="M:senai.hroads.webApi.Repositories.UsuarioRepository.Listar">
-             <summary>
-            Lista todos os usuarios
-             </summary>
-             <returns>Uma lista com todos os usuarios</returns>
         </member>
         <member name="M:senai.hroads.webApi.Repositories.UsuarioRepository.ListarTipoUsuario">
             <summary>

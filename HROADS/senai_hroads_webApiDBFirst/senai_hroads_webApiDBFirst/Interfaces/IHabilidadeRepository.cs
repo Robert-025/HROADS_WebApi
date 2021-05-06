@@ -47,7 +47,7 @@ namespace senai_hroads_webApiDBFirst.Interfaces
         /// Atualiza uma Habilidade passando o seu id na url da requisição
         /// </summary>
         /// <param name="id">Id da Habilidade que será atualizada</param>
-        /// <param name="HabilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
+        /// <param name="habilidadeAtualizada">Objeto com as informações que serão atualizadas</param>
         void Atualizar(int id, Habilidade habilidadeAtualizada);
     }
 }

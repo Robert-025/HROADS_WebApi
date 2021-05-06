@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using senai_hroads_webApiDBFirst.Domains;
 using senai_hroads_webApiDBFirst.Interfaces;
@@ -61,6 +62,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="novoTipoHabilidade">Objeto novoTipoHabilidade que será cadastrado</param>
         /// <returns>Um status code 201 - Created</returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Post(TipoHabilidade novoTipoHabilidade)
         {
@@ -77,6 +79,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// <param name="id">Id do TipoHabilidade que será atualizado</param>
         /// <param name="tipoHabilidadeAtualizado">Objeto com as informa~ções que serão atualizadas</param>
         /// <returns>Retorna um status 204 - NoContent</returns>
+        [Authorize(Roles = "1")]
         [HttpPut("{id}")]
         public IActionResult Put(int id, TipoHabilidade tipoHabilidadeAtualizado)
         {
@@ -92,6 +95,7 @@ namespace senai_hroads_webApiDBFirst.Controllers
         /// </summary>
         /// <param name="id">Id do tipo de habilidade que vai ser deletado</param>
         /// <returns>Um status code 204 - NoContent</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
